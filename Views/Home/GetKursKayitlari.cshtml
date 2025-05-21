@@ -1,0 +1,27 @@
+@model IEnumerable<KursKayit>
+ 
+    <h2>Kayit Listesi</h2>
+    <hr>
+    <a asp-action="CreateKursKayit" class="btn btn-sm btn-success mb-3"> Kayıt Ekle</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Öğrenci</th>
+                <th>Kurs</th>
+                <th style="width: 150px;">İşlem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m=>item.Ogrenci.AdSoyad)</td>
+                    <td>@Html.DisplayFor(m=>item.Kurs.Baslik)</td>
+                    <td>
+                        <a asp-action="EditKursKayitlari" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Düzenle</a>
+                        <a asp-action="DeleteKursKayitlari" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

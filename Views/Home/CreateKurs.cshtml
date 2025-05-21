@@ -1,0 +1,17 @@
+@model KursViewModel
+<h2>Kurs Ekle</h2>
+<hr>
+<form asp-contorller="Home" asp-action="CreateKurs" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for="Baslik" class="form-label" >Kurs Başlığı</label>
+        <input asp-for="Baslik" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EgitmenId" class="form-label">Eğitmen</label>
+        <select asp-for="EgitmenId" asp-items="ViewBag.Egitmenler" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-secondary">Kaydet</button>
+</form>

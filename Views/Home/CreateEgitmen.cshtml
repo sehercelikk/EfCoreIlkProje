@@ -1,0 +1,18 @@
+@model Egitmen
+<h2>Eğitmen Ekle</h2>
+<hr>
+<form asp-contorller="Home" asp-action="CreateEgitmen" method="post">
+    <div class="mb-3">
+        <label asp-for="AdSoyad" class="form-label" >Ad Soyad</label>
+        <input asp-for="AdSoyad" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EPosta" class="form-label" >Eposta</label>
+        <input asp-for="EPosta" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Telefon" class="form-label" >Telefon</label>
+        <input asp-for="Telefon" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-secondary">Kaydet</button>
+</form>

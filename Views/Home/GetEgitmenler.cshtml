@@ -1,0 +1,29 @@
+@model IEnumerable<Egitmen>
+ 
+    <h2>Öğrenci Listesi</h2>
+    <hr>
+    <a asp-action="CreateEgitmen" class="btn btn-sm btn-success mb-3"> Eğitmen Ekle</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m=>m.AdSoyad)</th>
+                <th>@Html.DisplayNameFor(m=>m.EPosta)</th>
+                <th>@Html.DisplayNameFor(m=>m.Telefon)</th>
+                <th style="width: 150px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.AdSoyad</td>
+                    <td>@item.EPosta</td>
+                    <td>@item.Telefon</td>
+                    <td>
+                        <a asp-action="EditEgitmen" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Düzenle</a>
+                        <a asp-action="DeleteEgitmen" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
