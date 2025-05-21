@@ -1,2 +1,2 @@
 # EfCoreIlkProje
-Entity Framework örnek kodlar
+Entity Framework örnek çalışmalar
